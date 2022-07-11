@@ -14,13 +14,6 @@ import (
 	"time"
 )
 
-type Pixel struct {
-	R uint8
-	G uint8
-	B uint8
-	A uint8
-}
-
 func RGBToGray(imgPath string) {
 	startTime := time.Now()
 	extension := filepath.Ext(imgPath)
@@ -701,7 +694,7 @@ func MedianFilter3x3(imgPath string) {
 			R := float64(original.R)
 			G := float64(original.G)
 			B := float64(original.B)
-			
+
 			newColor := color.RGBA{
 				R: uint8(R * 255.0),
 				G: uint8(G * 255.0),
@@ -719,15 +712,6 @@ func MedianFilter3x3(imgPath string) {
 }
 
 func main() {
-	//YCbCrToRGB("./4K_YCbCr.jpeg")
-	//RGBToYCbCr("./4K.jpeg")
-	//RGBToYUV("./test.jpg")
-	//YUVToRGB("./test_YUV.jpg")
-	//RGBToXYZ("./test.jpg")
-	//XYZToRGB("./test_XYZ.jpg")
-	//RGBToYCoCg("./test.jpg")
-	//YCoCgToRGB("./test_YCoCg.jpg")
-	//GammaCorrection("./test.jpg")
 	MedianFilter3x3("./test.jpg")
 }
 
